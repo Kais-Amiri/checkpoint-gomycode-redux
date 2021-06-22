@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import TodoCard from "./TodoCard";
 import add_Action from "./js/reducer/AddActionTodo";
+import { Button } from "react-bootstrap" 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
               value={inputState}
               onChange={(e) => inputsetState(e.target.value)}
             />
-            <button onClick={() => addInput()}>Add</button>
+            <Button style ={{ margin: "0 2%"}} variant="success" onClick={() => addInput()}>Add to the list</Button>
           </div>
 
           <div className="col-lg-1 col-1">

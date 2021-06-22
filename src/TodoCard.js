@@ -33,20 +33,20 @@ function TodoCard(props) {
   ).done;
 
   return (
-    <div style={{ border: "1px solid blue" }}>
+    <div style={{ display : "flex", justifyContent: "center",alignItems: "center", padding: "3%", border: "1px solid blue" }}>
       <h3
         style={{ textDecoration: done ? "line-through" : "none" }}
         onClick={() => dispatch(done_undone_Action(props.info.id))}
       >
         {props.info.tache}
       </h3>
-      <AiOutlineDelete onClick={() => dispatch(delete_Action(props.info.id))} />
+      <AiOutlineDelete style={{margin: "0 4%"}} onClick={() => dispatch(delete_Action(props.info.id))} />
       <>
         <FiEdit onClick={handleShow} />
 
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title> Edit text</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <input
